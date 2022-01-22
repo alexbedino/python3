@@ -1,0 +1,23 @@
+child_meal = float(input("What is the price of a child's meal? "))
+adult_meal = float(input("What is the price of an adult's meal? "))
+drinks = float(input("What is the price of drinks? "))
+num_child = int(input("How many children are there? "))
+num_adult = int(input("How many adults are there? "))
+num_drink = int(input("How many drinks are there? "))
+tax_rate = float(input("What is the sales tax rate? "))
+discount = float(input("What is the discount applied($)? "))
+
+print()
+subtotal = ((child_meal*num_child)+(adult_meal*num_adult)+(drinks*num_drink))
+print (f"Subtotal: ${subtotal}")
+disc_subtotal = ((subtotal-discount))
+print (f"Discounted Subtotal: ${disc_subtotal}")
+tax_amount = disc_subtotal * tax_rate / 100
+print (f"Sales tax: ${tax_amount}")
+total = (disc_subtotal + tax_amount)
+print (f"Total: ${total}")
+print()
+pay_amount = float(input("What is the payment amount? "))
+change = pay_amount - total
+format_change = "{:.2f}".format(change)
+print (f"Change: ${format_change}")
