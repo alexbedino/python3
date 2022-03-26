@@ -29,6 +29,10 @@ with open("life-expectancy.csv") as life_data:
         else:
             continue
     
+mxle_age = 0   #max life expectancy
+mnle_age = 130 #min life expectancy
+mxle_country = ()
+mnle_country = ()
 
 with open("life-expectancy.csv") as life_data:
     year_int = int(input("Enter the year of interest: ")) # user query input
@@ -41,6 +45,14 @@ with open("life-expectancy.csv") as life_data:
         age = float(new_line[3])    # age
         if year_int == year:
             avlife_list.append(age)
+            if age > mxle_age:
+                mxle_age = age
+                mxle_country = country
+            elif age < mnle_age:
+                mnle_age = age
+                mnle_country = country
+            else:
+                continue
 
 average_age = statistics.fmean(avlife_list)  # this function calculates fast the average among many floats
 
@@ -50,3 +62,5 @@ print (f"The min recorded age in the whole database is for {min_country} and it 
 print ()
 print (f"For the year {year_int}:")
 print (f"The average life expectancy across all countries was {average_age:.2f}")
+print (f"The max life expectancy was in {mxle_country} with {mxle_age}")
+print (f"The min life expectancy was in {mnle_country} with {mnle_age}")
