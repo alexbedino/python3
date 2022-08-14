@@ -1,0 +1,20 @@
+pizzas = ["capricciosa", "margherita", "quattro stagioni"]
+
+print (f"These are my favorite pizzas: \n")
+number = 0
+for pizza in pizzas:
+    number += 1
+    print (f"{number}. {pizza}")
+
+print("")
+print (f"Which are yours?")
+
+empty_list = []
+for number in range(1,1000001):
+    empty_list.append(number)
+
+max = max(empty_list)
+min = min(empty_list)
+sum_list = sum(empty_list)
+
+print (f"The min in the list is {min} while the max is {max}. the sum of all the elements is {sum_list}")
